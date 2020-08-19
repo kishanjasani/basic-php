@@ -46,18 +46,18 @@ trait Singleton {
 
 		$called_class = get_called_class();
 
-		if ( ! isset( $instace[ $called_class ] ) ) {
-			$instace[ $called_class ] = new $called_class();
+		if ( ! isset( $instance[ $called_class ] ) ) {
+			$instance[ $called_class ] = new $called_class();
 		}
 
-		return $instace[ $called_class ];
+		return $instance[ $called_class ];
 	}
 }
 
 class User {
 	use Singleton;
 
-	public function __constructor() {
+	public function __construct() {
 		echo 'User';
 	}
 }
